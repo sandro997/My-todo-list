@@ -2,7 +2,15 @@
     margin: 0;
     padding: 0;
     font-family:'NeueHaasGrotesk', Helvetica, Arial, sans-serif;
-    font-weight: 500;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.align-content{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
 }
 
 @font-face {
@@ -17,8 +25,6 @@
     font-weight: 400;
     src: url(https://cdn.shopify.com/b/shopify-brochure2-assets/8e7a81acb91d51d6051bfb7f97e8ecaa.woff2) format("woff2"),url(https://cdn.shopify.com/b/shopify-brochure2-assets/1cbd239d733557437a427162aff52be8.woff) format("woff"),url(https://cdn.shopify.com/b/shopify-brochure2-assets/90d64aa1ddad076d7d69e1dc1414321a.ttf) format("ttf")
 }
-
-/*font*/
 @font-face {
     font-display: swap;
     font-family: NeueHaasGrotesk;
@@ -26,7 +32,6 @@
     font-weight: 500;
     src: url(https://cdn.shopify.com/b/shopify-brochure2-assets/5ed4b67d15b44e848aaae29d2e30ec03.woff2) format("woff2"),url(https://cdn.shopify.com/b/shopify-brochure2-assets/ab4d5f1126ba42a1ffaed42b4b444684.woff) format("woff"),url(https://cdn.shopify.com/b/shopify-brochure2-assets/a2768e9bf57f40ef4203c4c686fb5c6e.ttf) format("ttf")
 }
-
 @font-face {
     font-display: swap;
     font-family: NeueHaasGrotesk;
@@ -43,6 +48,7 @@
     background-color: #262336;
     flex-direction: column;
     color: white;
+    padding: 10px;
 }
 
 .input-container{
@@ -56,13 +62,6 @@ input{
     height: 50px;
     border-bottom: 3px solid white;
     margin: 0 10px 0 0;
-}
-
-.align-content{
-    display: flex;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
 }
 
 button{
@@ -98,5 +97,8 @@ button{
 li{
     all: unset;
     color: white;
+}
+
+li > p {
     margin: 0 auto 0 0;
 }
