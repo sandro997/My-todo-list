@@ -5,11 +5,10 @@ function createButton(text) {
   return button;
 }
 
-function createTaskText() {
-  const inputValue = document.querySelector("input").value;
-  if (inputValue.trim() !== "") {
+function createTaskText(text) {
+  if (text.trim() !== "") {
     const taskText = document.createElement("p");
-    taskText.textContent = inputValue;
+    taskText.textContent = text;
     return taskText;
   } else {
     alert("Casella di testo vuota");
@@ -25,13 +24,16 @@ function createListElement() {
 
 function createTask() {
   const taskParent = document.querySelector("ul");
-  const taskCheck = createTaskText();
+  const input = document.querySelector("input");
+  const inputValue = input.value;
+  const taskCheck = createTaskText(inputValue);
   if (taskCheck) {
     const task = createListElement();
     task.appendChild(taskCheck);
     task.appendChild(createButton("Done"));
     task.appendChild(createButton("Delete"));
     taskParent.appendChild(task);
+    input.value = "";
   }
 }
 
