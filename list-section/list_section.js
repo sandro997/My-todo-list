@@ -1,27 +1,28 @@
-function createButton(text) {
+function createButton(string) {
   const button = document.createElement("button");
-  button.textContent = text;
+  button.textContent = string;
   button.classList.add("align-content");
+  if (string === "Done") {
+    button.classList.add("done");
+    button.addEventListener("click", completedTask);
+  } else button.classList.add("delete");
   return button;
 }
-
-function createTaskText(text) {
-  if (text.trim() !== "") {
+function createTaskText(string) {
+  if (string.trim() !== "") {
     const taskText = document.createElement("p");
-    taskText.textContent = text;
+    taskText.textContent = string;
     return taskText;
   } else {
     alert("Casella di testo vuota");
     return null;
   }
 }
-
 function createListElement() {
   const listElement = document.createElement("li");
   listElement.classList.add("align-content", "list-element");
   return listElement;
 }
-
 function elementTemplate(taskParent, taskCheck) {
   const task = createListElement();
   task.appendChild(taskCheck);
@@ -29,7 +30,6 @@ function elementTemplate(taskParent, taskCheck) {
   task.appendChild(createButton("Delete"));
   taskParent.appendChild(task);
 }
-
 function createTask() {
   const taskParent = document.querySelector("ul");
   const input = document.querySelector("input");
@@ -47,7 +47,7 @@ function createTask() {
 const addButton = document.getElementById("add-button");
 addButton.addEventListener("click", createTask);
 
-let savedTasks = [];
+let savedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
 function saveTask(task) {
   savedTasks.push(task);
@@ -68,3 +68,17 @@ function loadTasks() {
 }
 
 window.onload = loadTasks;
+
+function removeTask(event) {
+  const button = event.target;
+  const parent = button.parentElement;
+  const taskText = parent.firstChild.textContent;
+  parent.remove();
+
+  savedTasks = savedTasks.filter((task) => task.myTask !== taskText);
+  localStorage.setItem("tasks", JSON.stringify(savedTasks));
+}
+
+function completedTask(event) {
+  removeTask(event);
+}

@@ -6,13 +6,6 @@
     font-size: 20px;
 }
 
-.align-content{
-    display: flex;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-}
-
 @font-face {
     font-family: 'NeueHaasGrotesk';
     src: url('../Fonts/NHaasGroteskTXPro-55Rg.otf');
@@ -44,11 +37,19 @@
     --border-radius: 3px
 }
 
+.align-content{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
 .todo-container {
     background-color: #262336;
     flex-direction: column;
     color: white;
     padding: 10px;
+    width: 700px;
 }
 
 .input-container{
