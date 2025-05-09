@@ -3,6 +3,11 @@
     padding: 0;
 }
 
+:root{
+    --li-backgroud-color: #342F4F;
+    --border-radius: 3px
+}
+
 .todo-container {
     background-color: #262336;
     flex-direction: column;
@@ -32,15 +37,35 @@ input{
 button{
     width: 100px;
     height: 50px;
-    border-radius: 10px;
+    border-radius: var(--border-radius);
     border-color: transparent;
     display: flex;
     cursor: pointer;
 }
 
-li{
-    width: auto;
+.list-element{
+    width: 600px;
+    padding: 1rem;
+    flex-direction: row;
+    gap: 5px;
+    margin: 10px;
+    background-color: var(--li-backgroud-color);
+    border-radius: var(--border-radius);
+}
+
+.list-element button {
     height: 30px;
-    background: #342F4F;
-    margin: 10px 0 10px 0;
+}
+
+.list-element button:first-of-type{
+    background-color: green;
+}
+.list-element button:nth-of-type(2) {
+    background-color: red;
+}
+
+li{
+    all: unset;
+    color: white;
+    margin: 0 auto 0 0;
 }
