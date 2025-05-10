@@ -10,4 +10,4 @@ Open the index.html file in your browser to view the application.
 This project is open-source and available under the MIT License.
 
 # Preview
-![To Do list preview](./list_preview.jpg)
+![To Do list preview](./list-section/list_preview.jpg)
