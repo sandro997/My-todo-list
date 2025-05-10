@@ -5,7 +5,10 @@ function createButton(string) {
   if (string === "Done") {
     button.classList.add("done");
     button.addEventListener("click", completedTask);
-  } else button.classList.add("delete");
+  } else {
+    button.classList.add("delete");
+    button.addEventListener("click", removeTask);
+  }
   return button;
 }
 function createTaskText(string) {
@@ -67,7 +70,10 @@ function loadTasks() {
   });
 }
 
-window.onload = loadTasks;
+window.onload = function () {
+  loadTasks();
+  taskCounter.textContent = indexCompletedTask;
+};
 
 function removeTask(event) {
   const button = event.target;
@@ -81,4 +87,15 @@ function removeTask(event) {
 
 function completedTask(event) {
   removeTask(event);
+  howManyComplete();
+}
+
+let indexCompletedTask =
+  JSON.parse(localStorage.getItem("Completed Task")) || 0;
+const taskCounter = document.getElementById("counter");
+
+function howManyComplete() {
+  indexCompletedTask++;
+  localStorage.setItem("Completed Task", JSON.stringify(indexCompletedTask));
+  taskCounter.textContent = indexCompletedTask;
 }
