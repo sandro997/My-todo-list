@@ -37,6 +37,7 @@ function createTaskText(string) {
   if (string.trim() !== "") {
     const taskText = document.createElement("p");
     taskText.textContent = string;
+    taskText.addEventListener("click", taskEdit);
     return taskText;
   } else {
     alert("Casella di testo vuota");

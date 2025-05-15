@@ -108,7 +108,7 @@ li{
     color: white;
 }
 
-li > p {
+li > p, li > .new-input {
     margin: 0 auto 0 0;
 }
 
