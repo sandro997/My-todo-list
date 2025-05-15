@@ -1,7 +1,7 @@
 /*
  * Creates a new <button> element with the text passed as a parameter.
  *
- * - Adds the 'align-content' CSS class to the button.
+ * - Adds the 'align-center' CSS class to the button.
  * - If the button text is "Done":
  *    - Adds the 'done' class.
  *    - Attaches the click event to the `completedTask` function to mark the task as completed.
@@ -12,7 +12,7 @@
 function createButton(string) {
   const button = document.createElement("button");
   button.textContent = string;
-  button.classList.add("align-content");
+  button.classList.add("align-center");
   if (string === "Done") {
     button.classList.add("done");
     button.addEventListener("click", completedTask);
@@ -47,12 +47,12 @@ function createTaskText(string) {
 /*
  * Creates a new <li> (list item) element with predefined classes.
  *
- * - Creates an <li> element and adds the CSS classes 'align-content' and 'list-element' to it.
+ * - Creates an <li> element and adds the CSS classes 'align-center' and 'list-element' to it.
  * - Returns the created <li> element.
  */
 function createListElement() {
   const listElement = document.createElement("li");
-  listElement.classList.add("align-content", "list-element");
+  listElement.classList.add("align-center", "list-element");
   return listElement;
 }
 /*
