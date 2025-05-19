@@ -33,8 +33,8 @@
     src: url(https://cdn.shopify.com/b/shopify-brochure2-assets/85640034fdc1068cdb17d5e74ab9876d.woff2) format("woff2"),url(https://cdn.shopify.com/b/shopify-brochure2-assets/234d2b025158bb5d34932312dbe25a75.woff) format("woff"),url(https://cdn.shopify.com/b/shopify-brochure2-assets/487c38363a740f737e9e2ac142166b79.ttf) format("ttf")
 }
 
-:root{
-    --border-radius: 3px
+body{
+    display: flex;
 }
 
 .flex-column{
@@ -47,76 +47,4 @@
     align-items: center;
     align-content: center;
     justify-content: center;
-}
-
-.todo-container {
-    background-color: #262336;
-    color: white;
-    padding: 10px;
-    width: 700px;
-}
-
-.todo-header{
-    position: relative;
-}
-
-.input-container{
-    display: flex;
-    margin: 20px;
-}
-
-input{
-    all: unset;
-    width: 300px;
-    height: 50px;
-    border-bottom: 3px solid white;
-    margin: 0 10px 0 0;
-}
-
-button{
-    width: 100px;
-    height: 50px;
-    border-radius: var(--border-radius);
-    border-color: transparent;
-    display: flex;
-    cursor: pointer;
-}
-
-.list-element{
-    width: 600px;
-    padding: 1rem;
-    flex-direction: row;
-    gap: 5px;
-    margin: 10px;
-    background-color:#342F4F;
-    border-radius: var(--border-radius);
-}
-
-.list-element button {
-    height: 30px;
-}
-
-.list-element button:first-of-type{
-    background-color: green;
-}
-.list-element button:nth-of-type(2) {
-    background-color: red;
-}
-
-li{
-    all: unset;
-    color: white;
-}
-
-li > p, li > .new-input {
-    margin: 0 auto 0 0;
-}
-
-#settings-icon{
-    position: absolute;
-    left: 5px;
-    top: 5px;
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
 }
